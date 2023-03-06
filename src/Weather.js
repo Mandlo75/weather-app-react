@@ -1,12 +1,36 @@
 import React from "react";
-import axios from "axios";
 
-export default function Weather() {
-  function handleResponse(response) {
-    alert(`The weather in New York is ${response.data.main.temp}°C`);
+export default function Weather(props) {
+  if (props.temperature) {
+    return (
+      <ul>
+        <li>
+          {" "}
+          The temperature in {props.city} is {Math.round(props.temperature)}°C.
+        </li>
+        <li>
+          {" "}
+          The Weather Description in {props.city} is {props.description}.
+        </li>
+        <li>
+          {" "}
+          The humidity in {props.city} is {props.humidity}%.
+        </li>
+        <li>
+          {" "}
+          The wind in {props.city} is {props.wind}km/hr.
+        </li>
+        <li>
+          {" "}
+          The weather Icon in {props.city} is
+          <img
+            src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`}
+            alt={props.description}
+          />
+        </li>
+      </ul>
+    );
+  } else {
+    return <p>Loading.....</p>;
   }
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=4770548bed49c5d96b7201c497695887&units=metric`;
-  axios.get(url).then(handleResponse);
-
-  return <h1>Hello from Weather</h1>;
 }
