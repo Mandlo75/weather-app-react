@@ -48,6 +48,20 @@ export default function App() {
           icon={icon}
         />
       </div>
+      <div>
+        This app was created by{" "}
+        <a href src="https://www.linkedin.com/in/sukoluhle-sifani-73b42519a/">
+          Sukoluhle Sifani,
+        </a>{" "}
+        is opensourced on{" "}
+        <a href src="https://github.com/Mandlo75/weather-app-react">
+          Github
+        </a>{" "}
+        and is hosted on{" "}
+        <a href src="https://merry-meerkat-3c1e6e.netlify.app/">
+          Netlify
+        </a>
+      </div>
     </div>
   );
 }
